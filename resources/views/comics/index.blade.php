@@ -12,11 +12,12 @@
             </div>
             @foreach ( $comics as $comic )
             <div class="col-2">
+                <img class="w-100" src="{{ $comic->thumb }}" alt="">
                 <a href="{{ route('comics.show', $comic) }}">
-                    <img class="w-100" src="{{ $comic->thumb }}" alt="">
                     <h3>{{ $comic->title }}</h3>
                 </a>
                 <div>{{ $comic->price }}$</div>
+                <a href="{{ route('comics.edit', $comic) }}" class="btn btn-secondary">Edit</a>
             </div>
             @endforeach
         </div>

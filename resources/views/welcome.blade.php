@@ -18,7 +18,7 @@
             <div class="col-2">
                 <img class="w-100" src="{{ $comic->thumb }}" alt="">
                 <h3>{{ $comic->title }}</h3>
-                <div>{{ $comic->description }}</div>
+                <div>{{ $comic->price }}$</div>
             </div>
             @empty
 

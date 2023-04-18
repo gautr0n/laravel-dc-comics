@@ -14,15 +14,11 @@
 
     <div class="container">
         <div class="row">
-            @forelse ( $comics as $comic )
             <div class="col-2">
-                <img class="w-100" src="{{ $comic->thumb }}" alt="">
-                <h3>{{ $comic->title }}</h3>
-                <div>{{ $comic->price }}$</div>
+                <a href="{{ route('comics.index') }}">
+                    <h3>DC comics</h3>
+                </a>
             </div>
-            @empty
-
-            @endforelse
         </div>
     </div>
 

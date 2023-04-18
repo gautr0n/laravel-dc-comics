@@ -46,4 +46,20 @@ class ComicController extends Controller
     public function edit(Comic $comic){
         return view ('comics.edit', compact('comic'));
     }
+
+    public function update(Request $request, Comic $comic){
+        $data = $request->all();
+
+        $comic->title = $data['title'];
+        $comic->description = $data['description'];
+        $comic->thumb = $data['thumb'];
+        $comic->price = $data['price'];
+        $comic->series = $data['series'];
+        $comic->sale_date = $data['sale_date'];
+        $comic->type = $data['type'];
+
+        $comic->save();
+
+        return to_route('comics.show', $comic);
+    }
 }

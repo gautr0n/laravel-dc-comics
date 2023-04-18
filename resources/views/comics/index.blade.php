@@ -9,6 +9,11 @@
                 <a class="btn btn-primary" href="{{ route('comics.create') }}">
                     Nuova Pasta
                 </a>
+                <form action="{{ route('comics.destroyAll')}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" class="btn btn-danger" value="Delete All">
+                </form>
             </div>
             @foreach ( $comics as $comic )
             <div class="col-2">
@@ -18,6 +23,11 @@
                 </a>
                 <div>{{ $comic->price }}$</div>
                 <a href="{{ route('comics.edit', $comic) }}" class="btn btn-secondary">Edit</a>
+                <form action="{{ route('comics.destroy', $comic)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                </form>
             </div>
             @endforeach
         </div>

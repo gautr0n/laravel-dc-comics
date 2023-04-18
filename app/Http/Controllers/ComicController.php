@@ -17,10 +17,15 @@ class ComicController extends Controller
         return view('comics.index', $data);
     }
 
-    public function show($id){
-
-        $comic = Comic::find($id);
-    
+    public function show(Comic $comic){
         return view ('comics.show', compact('comic'));
+    }
+
+    public function create(){
+        return view ('comics.create');
+    }
+
+    public function store(){
+        return view ('comics.store');
     }
 }
